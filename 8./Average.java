@@ -28,10 +28,10 @@ public class Average {
         int age = Integer.parseInt(tempAge);
         g2 = g2 + age;
     }
-    
+
     static void addMale() {
          a1 = a1 + 1;
-        // då är vi man
+        // då är vi man, detta är ett test
         String tempAge = JOptionPane.showInputDialog(null, "Ok, du är en man, hur gammal är du?");
         int age = Integer.parseInt(tempAge);
         g1 = g1 + age;
