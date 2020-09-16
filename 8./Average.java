@@ -13,11 +13,17 @@ public class Average {
     static int g2 = 0;
 
     static void addPerson() {
-        int choice = JOptionPane.showConfirmDialog(null, "Är du kvinna?");
-        if (choice == 1) {
+        Object[] options = {"Man", "Kvinna", "Vill ej ange"};
+        Object selectionObject = JOptionPane.showInputDialog(null, "Vänligen ange kön", "Menu", JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+        String gender = selectionObject.toString();
+        //int choice = JOptionPane.showConfirmDialog(null, "Är du kvinna?");
+        if (gender == "Man") {
             addMale();
-        } else if (choice == 0) {
+        } else if (gender == "Kvinna") {
             addFemale();
+        } else if (gender == "Vill ej ange") {
+            JOptionPane.showMessageDialog(null, "Du behöver tyvärr ange ditt kön för att detta program ska fungera");
+            
         }
     }
 
