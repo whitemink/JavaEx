@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Average {
+public class AverageBeta {
     // Antal män
     static int a1 = 0;
     // Antal kvinnor
@@ -12,8 +12,6 @@ public class Average {
     // sammanlagda ålder för kvinnor
     static int g2 = 0;
 
-    // För att inte programmet ska krascha så behöver vi konvertera svaret av g1/a1
-    // till string
     public static String averageMale() {
         if (a1 == 0) {
             return "0";
@@ -38,7 +36,6 @@ public class Average {
     }
 
     static void addPerson() {
-        // Vi använder oss av en "drop-down" meny för att minimera fel som användaren kan råka göra
 
         Object[] options = { "Man", "Kvinna", "Vill ej ange" };
         Object selectionObject = JOptionPane.showInputDialog(null, "Vänligen ange kön", "Menu",
@@ -65,9 +62,9 @@ public class Average {
         }
 
     }
-     // Nästkommande metoder behöver vara felsäkra då användaren kommer att ange ett värde i en dialog ruta. try catch löser detta
+
     static void addFemale() {
-        
+        // då är vi
 
         String tempAge = JOptionPane.showInputDialog(null, "Vilken ålder är kvinnan?");
         try {
@@ -100,20 +97,19 @@ public class Average {
 
     static void addNoGen() {
 
-        
+        // usr vill inte ange.
         JOptionPane.showMessageDialog(null, "Du behöver tyvärr ange ditt kön för att detta program ska fungera");
 
     }
 
     public static void main(String[] arg) {
-    // Inne i main metoden är huvud koden som körs
+
         int addMore;
 
         JOptionPane.showMessageDialog(null,
-                "Välkommen, \nI detta program kommer vi räkna ut medelåldern på angivna kvinnor respektive män");
-        
-        do {     /* denna do while loop är den mest väsentliga algorimt för programmet.
-                    Den utför addPerson metoden varje gång användaren har fler deltagare att lägga till*/
+                "Välkommen, \nI detta program kommer vi räkna ut medelåldern på angivna kvinnor och män");
+
+        do {
 
             addPerson();
 
@@ -125,10 +121,8 @@ public class Average {
             if (addMore == 1) {
                 // Här ska slutresultat vara
 
-                JOptionPane.showMessageDialog(null,
-                        "Det är " + a1 + "st män deltagande" + "\nDet är " + a2 + "st kvinnor deltagande"
-                                + "\nMedelåldern för kvinnor är: " + averageFemale() + "år" + "\n"
-                                + "Medelåldern för män är: " + averageMale() + "år");
+                JOptionPane.showMessageDialog(null, "Medelåldern för kvinnor är:  " + averageFemale() + "\n"
+                        + "Medelåldern för män är: " + averageMale());
                 System.exit(0);
             }
         } while (addMore == 0);
